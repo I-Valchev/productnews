@@ -1,0 +1,20 @@
+on:
+  schedule:
+    # Run this once per day, towards the end of the day for keeping the most
+    # recent data point most meaningful (hours are interpreted in UTC).
+    - cron: "* 23 * * *"
+  workflow_dispatch: # Allow for running this manually.
+
+jobs:
+  fetch:
+    name: fetch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch RSS feeds as JSON
+        uses: i-valchev/rss-to-json@v0.0.1
+
+      # Commit chnages to repo
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.8.0
+        with:
+          commit_message: Update feeds.json with RSS data.
