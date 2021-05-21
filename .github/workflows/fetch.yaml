@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fetch RSS feeds as JSON
-        uses: i-valchev/rss-to-json@0.0.1
+        uses: i-valchev/rss-to-json@dev-master
 
       # Commit chnages to repo
       - name: Git Auto Commit
