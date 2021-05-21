@@ -10,6 +10,12 @@ jobs:
     name: fetch
     runs-on: ubuntu-latest
     steps:
+      # Checkout current branch / repo
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      # Generates the feeds.json
       - name: Fetch RSS feeds as JSON
         uses: i-valchev/rss-to-json@0.0.2
 
