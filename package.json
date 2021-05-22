@@ -1,0 +1,26 @@
+{
+  "name": "productnews",
+  "version": "1.0.0",
+  "description": "Aggregated product news from reputable publications and blogs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/I-Valchev/productnews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/I-Valchev/productnews/issues"
+  },
+  "homepage": "https://github.com/I-Valchev/productnews#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "nunjucks": "latest",
+    "eleventy-plugin-date": "latest"
+  }
+}

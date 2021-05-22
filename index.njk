@@ -1,0 +1,35 @@
+---
+pagination:
+    data: feeds
+    size: 5
+---
+
+{% extends 'base.njk' %}
+
+{% block content %}
+    <section>
+        {% for feed in pagination.items %}
+            <article>
+                <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
+                <section>
+                    {% set excerpt = feed['content:encoded']|striptags|truncate(250) %}
+                    {% if excerpt %}
+                        <p>{{ excerpt }}</p>
+                    {% endif %}
+                    <p>Published by {{ feed.creator }} on {{ feed.isoDate|date }}</p>
+                </section>
+            </article>
+        {% endfor %}
+
+        <hr>
+        <nav>
+            {% if pagination.href.previous %}
+                <a href="{{ pagination.href.previous }}">Previous</a>
+            {% endif %}
+
+            {% if pagination.href.next %}
+                <a href="{{ pagination.href.next }}">Next</a>
+            {% endif %}
+        </nav>
+    </section>
+{% endblock %}
