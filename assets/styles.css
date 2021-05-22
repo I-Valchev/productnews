@@ -1,0 +1,30 @@
+:root {
+    --primary: #fedb8b;
+    --secondary: #173854;
+    --black: #444;
+}
+
+body {
+    font-family: "Newsreader", Merriweather,Georgia,serif;
+}
+
+a, a:visited {
+    color: var(--secondary);
+}
+
+a:hover {
+    color: #3498db;
+}
+
+h1 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+h1 + p {
+    margin-top: -2rem !important;
+}
+
+hr {
+    padding: 0 !important;
+}
