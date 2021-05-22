@@ -15,7 +15,7 @@ jobs:
       - name: Build
         uses: TartanLlama/actions-eleventy@v1.1
         with:
-          args: --pathprefix=productnews
+          args: --pathprefix 'productnews'
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v1.1.0
         env:
