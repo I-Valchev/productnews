@@ -22,6 +22,6 @@
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "nunjucks": "latest",
-    "eleventy-plugin-date": "latest"
+    "truncate-html": "^1.0.3"
   }
 }

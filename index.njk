@@ -12,16 +12,12 @@ pagination:
             <article>
                 <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
                 <section>
-                    {% set excerpt = feed['content:encoded']|striptags|truncate(250) %}
-                    {% if excerpt %}
-                        <p>{{ excerpt }}</p>
-                    {% endif %}
+                    {{ feed['content:encoded']|truncate_html(50)|safe }}
                     <p>Published by {{ feed.creator }} on {{ feed.isoDate|date }}</p>
                 </section>
             </article>
+            <hr>
         {% endfor %}
-
-        <hr>
         <nav>
             {% if pagination.href.previous %}
                 <a href="{{ pagination.href.previous|url }}">Previous</a>

@@ -27,4 +27,5 @@ h1 + p {
 
 hr {
     padding: 0 !important;
+    opacity: 0.2;
 }

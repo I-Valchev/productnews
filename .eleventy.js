@@ -1,15 +1,17 @@
 const Nunjucks = require("nunjucks");
-const pluginDate = require("eleventy-plugin-date");
+const truncateHtml = require('truncate-html')
 
 module.exports = function(eleventyConfig) {
     const nunjucksEnvironment = new Nunjucks.Environment(
         new Nunjucks.FileSystemLoader("_includes")
     );
 
-    eleventyConfig.addPlugin(pluginDate);
-
     eleventyConfig.addNunjucksFilter("date", function(iso) {
         return (new Date(iso)).toDateString();
+    });
+
+    eleventyConfig.addNunjucksFilter('truncate_html', function(html, length=20) {
+       return truncateHtml(html, length, { byWords: true });
     });
 
     eleventyConfig.setLibrary("njk", nunjucksEnvironment);
