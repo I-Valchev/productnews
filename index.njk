@@ -24,11 +24,11 @@ pagination:
         <hr>
         <nav>
             {% if pagination.href.previous %}
-                <a href="{{ pagination.href.previous }}">Previous</a>
+                <a href="{{ pagination.href.previous|url }}">Previous</a>
             {% endif %}
 
             {% if pagination.href.next %}
-                <a href="{{ pagination.href.next }}">Next</a>
+                <a href="{{ pagination.href.next|url }}">Next</a>
             {% endif %}
         </nav>
     </section>
