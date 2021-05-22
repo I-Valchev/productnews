@@ -13,7 +13,7 @@ jobs:
 
       # Generates the feeds.json
       - name: Fetch RSS feeds as JSON
-        uses: i-valchev/rss-to-json@0.0.4
+        uses: i-valchev/rss-to-json@0.0.5
         with:
           source: /home/runner/work/productnews/productnews/feeds.yaml # temporary
           target: /home/runner/work/productnews/productnews/feeds.json # temporary
