@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "50 8,11,14,17 * * *"
+    - cron: "50 6,9,12,15 * * *" # UTC time
   workflow_dispatch: # Allow for running this manually.
 
 jobs:

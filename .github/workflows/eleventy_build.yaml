@@ -2,7 +2,7 @@ name: Eleventy Build
 on:
   push: #
   schedule:
-    - cron: "55 8,11,14,17 * * *"
+    - cron: "55 6,9,12,15 * * *" # UTC time
   workflow_dispatch: # Allow for running this manually.
 
 jobs:
