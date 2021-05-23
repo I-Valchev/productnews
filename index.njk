@@ -13,7 +13,7 @@ pagination:
                 <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
                 <section>
                     {{ feed['content:encoded']|truncate_html(50)|safe }}
-                    <p>Published by {{ feed.creator }} on {{ feed.isoDate|date }}</p>
+                    <p>Published by {{ feed.author }} on {{ feed.isoDate|date }}</p>
                 </section>
             </article>
             <hr>
