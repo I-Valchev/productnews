@@ -21,7 +21,9 @@
   "homepage": "https://github.com/I-Valchev/productnews#readme",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "luxon": "^1.27.0",
     "nunjucks": "latest",
-    "truncate-html": "^1.0.3"
+    "truncate-html": "^1.0.3",
+    "js-yaml": "latest"
   }
 }

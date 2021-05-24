@@ -7,29 +7,38 @@ pagination:
 {% extends 'base.njk' %}
 
 {% block content %}
-    <section>
-        {% for feed in pagination.items %}
-            <article>
-                <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
-                <section>
-                    {{ feed['content:encoded']|truncate_html(50)|safe }}
-                    <p>
-                        Published
-                        {% if feed.author %} by {{ feed.author }}{% endif %}
-                        {% if feed.isoDate %} on {{ feed.isoDate|date }}{% endif %}
-                    </p>
-                </section>
-            </article>
-            <hr>
-        {% endfor %}
-        <nav>
-            {% if pagination.href.previous %}
-                <a href="{{ pagination.href.previous|url }}">Previous</a>
-            {% endif %}
+    <div class="list-container">
+        <aside>
+            <p>
+                Right now, there are {{ feeds|length }} aggregated posts from {{ sources.feeds|length }} publications.
+                Last updated at {{ 'now'|date('HH:mm') ~  ' ' ~ 'now'|date('', true) }}.
+            </p>
+        </aside>
 
-            {% if pagination.href.next %}
-                <a href="{{ pagination.href.next|url }}">Next</a>
-            {% endif %}
-        </nav>
-    </section>
+        <main role="main">
+            {% for feed in pagination.items %}
+                <article>
+                    <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
+                    <section>
+                        {{ feed['content:encoded']|truncate_html(50)|safe }}
+                        <p>
+                            Published
+                            {% if feed.author %} by {{ feed.author }}{% endif %}
+                            {% if feed.isoDate %} on {{ feed.isoDate|date }}{% endif %}
+                        </p>
+                    </section>
+                </article>
+                <hr>
+            {% endfor %}
+            <nav>
+                {% if pagination.href.previous %}
+                    <a href="{{ pagination.href.previous|url }}">Previous</a>
+                {% endif %}
+
+                {% if pagination.href.next %}
+                    <a href="{{ pagination.href.next|url }}">Next</a>
+                {% endif %}
+            </nav>
+        </main>
+    </div>
 {% endblock %}

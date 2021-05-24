@@ -29,3 +29,13 @@ hr {
     padding: 0 !important;
     opacity: 0.2;
 }
+
+.list-container {
+    display: grid;
+    grid-template-columns: 1.3fr 3fr 1.3fr;
+}
+
+.list-container > aside {
+    margin-left: 2rem;
+    margin-top: 2.6rem;
+}
