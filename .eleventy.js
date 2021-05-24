@@ -19,8 +19,8 @@ module.exports = function(eleventyConfig) {
         }
 
         switch(format) {
-            case 'relative':
-                return date.toRelative();
+            case 'iso':
+                return date.toISO();
             default:
                 return date.toFormat(format);
         }

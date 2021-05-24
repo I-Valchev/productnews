@@ -11,7 +11,7 @@ pagination:
         <aside>
             <p>
                 Right now, there are {{ feeds|length }} aggregated posts from {{ sources.feeds|length }} publications.
-                Last updated {{ 'now'|date('relative') }}.
+                Last updated <span data-relative-time="{{ 'now'|date('iso') }}">{{ 'now'|date }}</span>
             </p>
         </aside>
 
