@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
-    eleventyConfig.addNunjucksFilter("date", function(dateString, format = 'cccc L LLLL yyyy', relative = false) {
+    eleventyConfig.addNunjucksFilter("date", function(dateString, format = 'cccc L LLLL yyyy') {
         let date;
         if (dateString === 'now') {
             date = luxon.DateTime.now();
@@ -18,7 +18,12 @@ module.exports = function(eleventyConfig) {
             date = luxon.DateTime.fromISO(dateString);
         }
 
-       return relative ? date.toRelativeCalendar() : date.toFormat(format);
+        switch(format) {
+            case 'relative':
+                return date.toRelative();
+            default:
+                return date.toFormat(format);
+        }
     });
 
     eleventyConfig.addNunjucksFilter('truncate_html', function(html, length=20) {
