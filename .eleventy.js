@@ -8,7 +8,7 @@ module.exports = function(eleventyConfig) {
         new Nunjucks.FileSystemLoader("_includes")
     );
 
-    eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
     eleventyConfig.addNunjucksFilter("date", function(dateString, format = 'cccc L LLLL yyyy', relative = false) {
         let date;
