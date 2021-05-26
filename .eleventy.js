@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
-    eleventyConfig.addNunjucksFilter("date", function(dateString, format = 'cccc L LLLL yyyy') {
+    eleventyConfig.addNunjucksFilter("date", function(dateString, format = 'cccc d LLLL yyyy') {
         let date;
         if (dateString === 'now') {
             date = luxon.DateTime.now();
