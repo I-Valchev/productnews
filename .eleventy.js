@@ -26,6 +26,24 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addNunjucksFilter("lower_headings", function(html, levels) {
+
+        if (typeof html === 'undefined') {
+            return;
+        }
+
+        for(let i = 0; i < levels; ++i) {
+            html = html
+                .replace(/<h5/g, '<h6').replace(/<\/h5/g, '</h6')
+                .replace(/<h4/g, '<h5').replace(/<\/h4/g, '</h5')
+                .replace(/<h3/g, '<h4').replace(/<\/h3/g, '</h4')
+                .replace(/<h2/g, '<h3').replace(/<\/h2/g, '</h3')
+                .replace(/<h1/g, '<h2').replace(/<\/h1/g, '</h2')
+        }
+
+        return html;
+    });
+
     eleventyConfig.addNunjucksFilter('truncate_html', function(html, length=20) {
        return truncateHtml(html, length, { byWords: true });
     });

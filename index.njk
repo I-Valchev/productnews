@@ -20,7 +20,7 @@ pagination:
                 <article>
                     <h3><a href="{{ feed.link }}" target="_blank" rel="noreferrer">{{ feed.title }}</a></h3>
                     <section>
-                        {{ feed['content:encoded']|truncate_html(50)|safe }}
+                        {{ feed['content:encoded']|truncate_html(50)|lower_headings(2)|safe }}
                         <p>
                             Published
                             {% if feed.author %} by {{ feed.author }}{% endif %}
