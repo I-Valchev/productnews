@@ -1,6 +1,7 @@
 feeds:
   - https://productcoalition.com/feed
-  - http://www2.technologyreview.com/rss/feeds/mainrss.aspx
+  - http://www2.technologyreview.com/rss/feeds/mainrss.aspx # Does not seem to be used anymore
+  - https://www.technologyreview.com/feed/
   - https://www.bringthedonuts.com/feed.xml
   - https://www.romanpichler.com/feed/
   - https://age-of-product.com/feed/
