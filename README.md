@@ -47,7 +47,7 @@ This software uses the following open source packages and tools:
 
 - [Eleventy](https://www.11ty.dev/)
 - [GitHub Actions](https://github.com/features/actions)
-- [GitHub Pages](https://pages.github.com/)
+- [Netlify](https://netlify.com/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 - [truncate-html](https://github.com/oe/truncate-html)
 
